@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FDFBF7">
+</head>
+<body>
+    <!-- Music Controls -->
+    <div id="music-controls">
+        <button id="music-btn" aria-label="Play/Pause Music">♪ Play Music</button>
+        <audio id="bg-music" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Screen 1: Welcome -->
+    <section id="welcome" class="screen active fade-in">
+        <div class="content">
+            <p class="subtitle">For Someone Very Special...</p>
+            <h1 class="title">Happy Birthday, <span class="her-name"></span> 🤍</h1>
+            <p class="small-text">I made something just for you.</p>
+            <button id="btn-open" class="btn-elegant">Open Your Birthday Gift &rarr;</button>
+        </div>
+    </section>
+
+    <!-- Screen 2: The Birthday Message -->
+    <section id="message" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="section-title">Happy Birthday, My Best Friend</h2>
+            <p class="text-body">
+                I may not always say it, but I miss you deeply. I miss our friendship, 
+                our conversations, and the moments we shared. Distance and time don't erase 
+                the importance of our friendship. I am so grateful that you became part of my life, 
+                and I hope you know how incredibly special you are to me. I wish I could be there 
+                to celebrate with you personally today.
+            </p>
+        </div>
+    </section>
+
+    <!-- Screen 3: Things I Miss -->
+    <section id="miss-you" class="screen hidden">
+        <div class="content">
+            <h2 class="section-title fade-element">Things I Miss About Us</h2>
+            <div class="cards-container">
+                <div class="miss-card fade-element">♡ Our random conversations</div>
+                <div class="miss-card fade-element">♡ Laughing about things only we understand</div>
+                <div class="miss-card fade-element">♡ The little moments that somehow became unforgettable</div>
+                <div class="miss-card fade-element">♡ Having someone I could talk to</div>
+                <div class="miss-card fade-element">♡ Our silly memories</div>
+                <div class="miss-card fade-element">♡ The comfort of knowing you were there</div>
+                <div class="miss-card fade-element">♡ Just being together, even doing nothing</div>
+                <div class="miss-card final-card fade-element">Most of all, I miss US.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 4: Our Memories -->
+    <section id="memories" class="screen hidden">
+        <div class="content">
+            <h2 class="section-title fade-element">A Little Collection of Us</h2>
+            <div class="gallery">
+                <div class="polaroid fade-element">
+                    <img src="photo1.jpg" alt="Memory 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' style=\'background:%23ebdcc9\'></svg>'">
+                    <p class="caption">One of those days I'll always remember.</p>
+                </div>
+                <div class="polaroid fade-element">
+                    <img src="photo2.jpg" alt="Memory 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' style=\'background:%23ebdcc9\'></svg>'">
+                    <p class="caption">Another little memory that became special.</p>
+                </div>
+                <div class="polaroid fade-element">
+                    <img src="photo3.jpg" alt="Memory 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' style=\'background:%23ebdcc9\'></svg>'">
+                    <p class="caption">Wish we could make more moments like this.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 5: A Letter For Her -->
+    <section id="letter" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="section-title">If I Could Tell You One Thing...</h2>
+            <div class="paper-letter">
+                <p>
+                    I know life has taken us in different directions, and maybe we don't talk or see each other the way we used to. But that doesn't mean I stopped caring.
+                </p>
+                <p>
+                    I still miss you. I still remember the little things about our friendship. And I hope you know that no matter how much time passes, I will always be grateful that I got to call you my best friend.
+                </p>
+                <p class="signature">
+                    Thank you for being one of the most beautiful parts of my story.<br><br>
+                    I miss you. More than you know. 🤍
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 6: Open When... -->
+    <section id="open-when" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="section-title">Open When...</h2>
+            <div class="envelopes-container">
+                <!-- Envelopes injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 7: Her Birthday Wish -->
+    <section id="wish" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="section-title">My Wish For You</h2>
+            <p class="text-body poem">
+                I hope this year is gentle with you.<br>
+                I hope you find reasons to smile even on ordinary days.<br>
+                I hope you meet people who appreciate your heart.<br>
+                I hope you achieve the things you've been quietly wishing for.<br>
+                And I hope you never forget how worthy you are of happiness.<br><br>
+                Most of all, I hope life gives us more chances to create memories together.<br><br>
+                Happy Birthday, my best friend. 🤍
+            </p>
+        </div>
+    </section>
+
+    <!-- Screen 8: The Surprise -->
+    <section id="surprise" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="section-title">Wait... there's one more thing.</h2>
+            <button id="btn-surprise" class="btn-elegant">Open it 🤍</button>
+            <div id="surprise-text" class="hidden">
+                <p class="reveal-text">No matter how far life takes us...</p>
+                <p class="reveal-text">...you will always have a special place in my heart.</p>
+                <p class="reveal-text">I miss you.</p>
+                <p class="reveal-text">And I hope someday soon, we won't have to miss each other anymore.</p>
+                <p class="reveal-text final">Happy Birthday, <span class="her-name"></span>. 🤍</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Screen -->
+    <section id="outro" class="screen hidden">
+        <div class="content fade-element">
+            <h2 class="title">Until we meet again...</h2>
+            <p class="subtitle">I'll be here, still cheering for you.</p>
+            <p class="small-text signature-text">With love, from your best friend, <span class="my-name"></span>.</p>
+            <button id="btn-replay" class="btn-elegant mt-2">Replay Our Little Story ↻</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

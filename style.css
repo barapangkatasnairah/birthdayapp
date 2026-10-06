@@ -1,0 +1,240 @@
+﻿:root {
+    --bg-color: #FDFBF7; /* Warm ivory */
+    --text-main: #4A4036; /* Muted brown */
+    --accent: #D4B895; /* Soft champagne */
+    --card-bg: #FFFFFF;
+    --shadow: 0 4px 20px rgba(74, 64, 54, 0.08);
+    --font-serif: "Georgia", "Times New Roman", serif;
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+    --font-handwriting: "Brush Script MT", "Lucida Handwriting", cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+.title { font-size: 2.5rem; font-weight: normal; margin-bottom: 1rem; color: var(--text-main); }
+.section-title { font-size: 2rem; font-weight: normal; margin-bottom: 2rem; text-align: center; }
+.subtitle { font-size: 1.2rem; font-style: italic; color: #8A7A6A; margin-bottom: 0.5rem; }
+.small-text { font-size: 0.9rem; color: #8A7A6A; margin-top: 1rem; }
+.text-body { font-size: 1.1rem; text-align: center; max-width: 600px; margin: 0 auto; padding: 0 1rem; }
+.poem { line-height: 2; font-style: italic; }
+
+/* Screens & Transitions */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease, visibility 1.5s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Buttons */
+.btn-elegant {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--accent);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 2rem;
+    transition: all 0.4s ease;
+    background-color: rgba(212, 184, 149, 0.1);
+}
+
+.btn-elegant:active, .btn-elegant:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+.mt-2 { margin-top: 2rem; }
+
+/* Music Controls */
+#music-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#music-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--accent);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+/* Things I Miss Cards */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.miss-card {
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 100%;
+    border-left: 3px solid var(--accent);
+    text-align: left;
+}
+.final-card {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Memories Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+.polaroid {
+    background: #fff;
+    padding: 15px 15px 40px 15px;
+    box-shadow: var(--shadow);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    max-width: 280px;
+}
+.polaroid:nth-child(even) { transform: rotate(2deg); }
+.polaroid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: #f0ebe1;
+}
+.caption {
+    font-family: var(--font-handwriting);
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #554a40;
+}
+
+/* Letter Section */
+.paper-letter {
+    background: #fff;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 4px;
+    background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(212, 184, 149, 0.2) 31px, rgba(212, 184, 149, 0.2) 32px);
+    line-height: 32px;
+}
+.paper-letter p { margin-bottom: 1.5rem; font-family: var(--font-serif); }
+.paper-letter .signature { font-family: var(--font-handwriting); font-size: 1.4rem; text-align: right; margin-top: 2rem; }
+
+/* Open When... */
+.envelopes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+.envelope {
+    background: var(--card-bg);
+    border: 1px solid var(--accent);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+.envelope-title { font-size: 1.1rem; display: flex; align-items: center; justify-content: space-between; }
+.envelope-message {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--accent);
+    font-style: italic;
+    display: none;
+    color: #6d6054;
+}
+.envelope.open .envelope-message { display: block; animation: fadeIn 0.5s ease; }
+
+/* Surprise */
+#surprise-text p {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+#surprise-text p.visible { opacity: 1; }
+#surprise-text .final { font-size: 1.8rem; margin-top: 3rem; font-style: italic; }
+
+.signature-text { font-family: var(--font-handwriting); font-size: 1.5rem; margin-top: 2rem; }
+
+/* Animations */
+.fade-element { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.fade-element.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: var(--accent);
+    font-size: 1.2rem;
+    opacity: 0.6;
+    animation: floatUp 4s ease-in infinite;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .title { font-size: 2rem; }
+    .section-title { font-size: 1.6rem; }
+    .paper-letter { padding: 1.5rem; }
+}
